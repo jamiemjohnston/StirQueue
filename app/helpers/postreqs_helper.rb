@@ -1,0 +1,2 @@
+module PostreqsHelper
+end

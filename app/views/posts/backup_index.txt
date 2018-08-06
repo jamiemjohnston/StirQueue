@@ -1,0 +1,59 @@
+<h1>Simple Queue</h1>
+
+	<br>
+
+<div class = "well">
+	<h4>Features: Meeting 1</h4>
+	<ol>
+		<li>A Simple Queue</li>
+		<li>Add New Post</li>
+	</ol>
+</div>
+
+<div class = "well">
+	<h4>Features: Meeting 2</h4>
+	<ol>
+		<li>Edit Post</li>
+		<li>Delete Post</li>
+		<li>Add Comments to Posts</li>
+		<li>Delete Comments</li>
+		<li>User Sign Up</li>
+		<li>User Sign In</li>
+		<li>User Verification</li>
+	</ol>
+</div>
+
+<div class = "well">
+	<h4>Features: Project Demo</h4>
+	<ol>
+		<li>Admin User Priviliges</li>
+		<li>Recieve a post request (Coming Soon)</li>
+	</ol>
+</div>
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Name</th>
+      <th scope="col">Problem</th>
+      <th scope="col">More</th>
+    </tr>
+  </thead>
+  <tbody>
+
+			<% @posts.each do |post| %>
+			<tr>
+					<td><%= post.user.email %></td>
+					<td><%= post.title %></td>
+					<td><%= post.body %></td>
+					<td><%= link_to "Read More", post_path(post), :class => 'btn btn-default' %></td>
+			</tr>
+			<% end %>
+  </tbody>
+</table>
+
+
+

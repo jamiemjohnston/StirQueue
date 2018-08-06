@@ -1,0 +1,21 @@
+<h4><%= @post.title %></h4>
+<p><b>Problem:</b> <%= @post.body %></p>
+<hr>
+
+
+<% if !current_user %>
+
+<% else %>
+
+		<% if @post.user == current_user || current_user.admin? %>
+		<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
+<!-- 		<%= link_to "Delete", post_path(@post), 
+						method: :delete,
+						data: {confirm: 'Are you sure?'},
+						:class => 'btn btn-danger' %> -->
+		<% end %>
+<% end %>
+<hr>
+
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>

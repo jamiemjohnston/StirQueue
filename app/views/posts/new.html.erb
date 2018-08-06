@@ -1,0 +1,23 @@
+<h1>Enter Queue</h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+	<% if @post.errors.any? %>
+		<% @post.errors.full_messages.each do |msg| %>
+			<div class = "alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<p>
+		<h4>Name</h4>
+		<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<h4>Problem</h4>
+		<%= f.text_field(:body, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit( "Enter Queue", {:class => 'btn btn-primary'}) %>
+	</p>
+
+<% end %>

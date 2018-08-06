@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stir Queue</title>
+    <%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+
+  </head>
+
+ <body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Simple Queue</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Home", home_path %></li>
+      <li id="button"><%= link_to "Enter Queue", new_post_path %></li>
+    </ul>
+    <ul span class="nav navbar-nav navbar-right">
+      <% if !user_signed_in? %>
+      <li><a href="http://localhost:3000/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="http://localhost:3000/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <% else %>
+      <li><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class = "container">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+		<%= yield %>
+	</div>
+
+
+</body>
+</html>
